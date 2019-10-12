@@ -1,5 +1,5 @@
 <template>
-     <div style="background-color:white">
+     <div style="background-color:white" class="search-style">
         <div style="width:100%;height:450px;background-image:url('/static/images/bg.jpg');text-align:center">
             <div class="h1" style="padding-top:80px">
               汇聚全球技术 助力企业升级
@@ -26,7 +26,7 @@
             <div class="creening-conditions">
                <el-row>
                   <div class="filter-label">
-                    所属领域
+                    所属领域1
                   </div>
                 <!-- <ul class="filter-items">
                      <li v-for='item of areaList' :key="item" class="filter-item" >
@@ -36,14 +36,64 @@
                     </li>
                 </ul> -->
                 <div class="filter-items" style="width:100%;;text-align:left">
-                  <el-radio-group v-model="radio1">
-                    <el-radio-button label="上海"></el-radio-button>
-                    <el-radio-button label="北京"></el-radio-button>
-                    <el-radio-button label="广州"></el-radio-button>
-                    <el-radio-button label="深圳"></el-radio-button>
+                    
+                  <el-radio-group v-model="informantType" @change="changeOptions()">
+                    <el-radio-button v-for="item in options" :key="item" :value="item" :label="item"  >
+                       {{item}}
+                    </el-radio-button>
                   </el-radio-group>
                 </div>
                 
+               </el-row>
+
+                <el-row>
+                  <div class="filter-label">
+                    所属领域2
+                  </div>
+                <!-- <ul class="filter-items">
+                     <li v-for='item of areaList' :key="item" class="filter-item" >
+                        <div class="item-content">
+                           <span class="no-limit"> {{item}}</span>
+                        </div>
+                    </li>
+                </ul> -->
+                <div class="filter-items" style="width:100%;;text-align:left">
+                    
+                  <el-radio-group v-model="informantType" @change="changeOptions()">
+                    <el-radio-button v-for="item in options" :key="item" :value="item" :label="item"  >
+                       {{item}}
+                    </el-radio-button>
+                  </el-radio-group>
+                </div>
+                
+               </el-row>
+
+                <el-row>
+                  <div class="filter-label">
+                    所属领域3
+                  </div>
+                <!-- <ul class="filter-items">
+                     <li v-for='item of areaList' :key="item" class="filter-item" >
+                        <div class="item-content">
+                           <span class="no-limit"> {{item}}</span>
+                        </div>
+                    </li>
+                </ul> -->
+                <div class="filter-items" style="width:100%;;text-align:left">
+                    
+                  <el-radio-group v-model="informantType" @change="changeOptions()">
+                    <el-radio-button v-for="item in options" :key="item" :value="item" :label="item"  >
+                       {{item}}
+                    </el-radio-button>
+                  </el-radio-group>
+                </div>
+                
+               </el-row>
+               <el-row>
+                  <div class="dataList">
+                      <div style="width:100px;height:300px;background-color:red"></div>
+                      <div style="width:100px;height:300px; background-color: rgba(0,0,0,.8); z-index: -1; top: 0;left: 0; position: absolute;overflow: hidden;"></div>
+                  </div>
                </el-row>
             </div>
              
@@ -63,7 +113,8 @@ export default {
         activeName: 'first', 
         input3: '',
         select: '1',
-        areaList:["不限","能源电力","环境工程","化学化工"]
+        options:["不限","能源电力","环境工程","化学化工","机械电子"],
+        informantType:"不限"
    
     };
   },mounted(){
@@ -71,32 +122,41 @@ export default {
   }, methods: {
     
     init(){
-      console.log($("#leftBox2").html())
-       $("#leftBox2").parent().find("a").css("background-color","#0690f7");
-      $("#leftBox2").css("background-color","#1976c5");
-    }
+        $("#leftBox2").parent().find("a").css("background-color","#0690f7");
+        $("#leftBox2").css("background-color","#1976c5");
+    },
 
+    changeOptions(){
+      console.log(this.informantType);
+    }
       
     }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style>
 
-/deep/ .el-radio-button:first-child .el-radio-button__inner {
-    border-left: 0px solid #DCDFE6;
+.search-style  .el-radio-button:first-child .el-radio-button__inner {
+    border: none;
     border-radius: 0px 0 0 0px;
 }
 
-/deep/ .el-radio-button:last-child .el-radio-button__inner {
+.search-style  .el-radio-button:last-child .el-radio-button__inner {
     border-radius: 0 0px 0px 0;
 }
 
-/deep/ .el-radio-button__inner{
+ .search-style  .el-radio-button__inner{
     border:none;
     margin: 0px 20px;
-    border-left: 0px solid #DCDFE6;
+    border:none;
+    background: none
+}
+
+
+ .search-style  .el-radio-button__orig-radio:checked+.el-radio-button__inner { 
+    -webkit-box-shadow: none;
+     
 }
 
 .filter-label{
@@ -143,10 +203,10 @@ export default {
   background-color: #fafafa;
 }
 
- .el-select .el-input {
+.search-style  .el-select .el-input {
     width: 130px;
   }
-  .input-with-select .el-input-group__prepend {
+ .search-style  .input-with-select .el-input-group__prepend {
     background-color: #ffffff;
   }
 
@@ -169,11 +229,11 @@ export default {
     color: #eee
 }
 
-.el-input-group__append, .el-input-group__prepend {
+.search-style  .el-input-group__append, .el-input-group__prepend {
     background-color: #0690f7;
 }
 
-.el-input-group__append, .el-input-group__prepend button{
+.search-style  .el-input-group__append, .el-input-group__prepend button{
     color: #f5f7fa;
      border: 1px solid #0690f7;
 }

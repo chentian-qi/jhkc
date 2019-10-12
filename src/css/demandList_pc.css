@@ -1,0 +1,456 @@
+body{
+    background-color: #f2f2f2;
+}
+.headerMenu{
+    width: 100%;
+    height: 40px;
+    background-color: #0690f7;
+}
+.inner{
+    width: 1200px;
+    margin: 0 auto;
+}
+.headerMenu .inner{
+    display: flex;
+    justify-content: space-between;
+}
+.headerMenu .leftBox{
+    display: flex;
+}
+.headerMenu .leftBox a{
+    width: 104px;
+    line-height: 40px;
+    color: #ffffff;
+    font-size: 13px;
+    text-align: center;
+}
+.headerMenu .leftBox .act{
+    background-color: #1976c5;
+}
+.headerMenu .leftBox a:hover{
+    background-color: #1976c5;
+}
+.headerMenu .rightBox{
+    display: flex;
+    color: #ffffff;
+    font-size: 13px;
+    text-align: center; 
+}
+.headerMenu .rightBox .cellBox1{
+    display: flex;
+    border: none;      
+    align-items: center;     
+}
+.headerMenu .rightBox .cellBox1 .dlBtn{
+    width: 42px;
+    line-height: 26px;
+    height: 26px;
+    background-color: #1976c5;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+.headerMenu .rightBox .cellBox1 .zcBtn{
+    width: 42px;
+    line-height: 26px;
+    height: 26px;
+    background-color: #169bd5;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px; 
+}
+.headerMenu .rightBox .cellBox2{
+    width: 116px;
+    line-height: 40px;
+}
+.headerMenu .rightBox .cellBox3{
+    width: 79px;
+    display: flex;
+    align-items: center;
+}
+.headerMenu .rightBox .cellBox3 .img1{
+    width: 19px;
+    height: 14px;
+    margin-right:5px;
+}
+.headerMenu .rightBox .cellBox3 .img2{
+    width: 8px;
+    height: 4px;
+    margin-left:5px;
+}
+.headerMenu .rightBox .cellBox4{
+    width: 106px;
+    line-height: 40px;
+}
+.headerMenu .rightBox .cellBox5{
+    display: flex;
+    align-items: center;
+}
+.headerMenu .rightBox .cellBox5 img{
+    width: 22px;
+    height: 22px;
+}
+.bannerBox img{
+    width: 100%;
+    height: 468px;
+}
+.textCon{
+    width: 100%;
+    background-color: #fff;
+    padding-bottom:30px;
+}
+.textConInner{
+    width: 900px;
+    margin: 0 auto;
+}
+html,
+body {
+    position: relative;
+    height: 100%;
+}
+
+.swiper-container {
+    width: 100%;
+    height: calc(100% - 50PX);
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+.swiper-top {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.qiHuan {
+    flex: 1;
+    height: 60px;
+    color: #535353;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 14px;
+    
+}
+.qiHuan span{
+    border-bottom:4px solid #fff;
+    display: block;
+    line-height: 60px;
+    width: 132px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.xuan span{
+    display: block;
+    line-height: 60px;
+    color: #0690f7;
+    border-bottom:4px solid #0690f7;
+    width: 132px;
+    text-align: center;
+    font-weight: bold;
+}
+table{
+    border-collapse:collapse;    
+}
+table,tr,td,th{
+    border: 1px solid #d4d4d4;
+}
+table th{
+    height: 39px;
+    background-color: #f7f7f7;
+    color: #6b6b6b;
+    font-size: 12px;
+}
+.th1{
+    width: 68px;
+}
+.th2{
+    width: 340px;
+}
+.th3{
+    width: 160px;
+}
+.th4{
+    width: 160px;
+}
+.th5{
+    width: 160px;
+}
+table tr td{
+    line-height: 38px;
+    color:#8f8f8f;
+    font-size: 13px;
+}
+.textCon .slideBox1 .searchBox{
+    width: 672px;
+    height: 50px;
+    display: flex;
+
+    margin:22px auto 26px auto;
+}
+.textCon .slideBox1 .searchBox input{
+    width: 577px;
+    height: 48px;
+    border:1px solid #0690f7;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    color: #848484;
+    line-height: 48px;
+    padding-left:26px;
+}
+.textCon .slideBox1 .searchBox a{
+    width: 68px;
+    height: 50px;
+    background-color: #0690f7;
+    background-image: url(/static/images/index06.jpg);
+    background-size: 23px 23px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+.container {
+    width: 900px;
+    margin: 50px auto 0;
+}
+
+.container .nav {
+    width: 898px;
+    border: 1px solid #ccc;
+    background-color: #f4f7fa;
+}
+
+.container .nav span {
+    display: block;
+    width: 110px;
+    
+    text-align: center;
+    line-height: 50px;
+    color: #64bcb6;
+    float: left;
+    cursor: pointer;
+    font-size: 13px;
+
+
+}
+
+.container .nav span.active {
+    background: #fff;
+    border-bottom: 1px solid #fff;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+}
+
+.container .nav span:first-child {
+    border: 0px
+}
+
+.content {
+    margin-top: 20px;
+    width: 900px;
+    position: relative;
+    overflow: hidden;
+    height: 470px;
+}
+
+/*定位一般设置为relative，overflow设置为hidden来隐藏外面的内容*/
+.content .box {
+    position: absolute;
+    width: 900px;
+    height: 200px;
+}
+
+/*这个定位设置为absolute, 因为要操作这个的位置来切换内容*/
+.content ul {
+    float: left;
+    width: 900px;
+}
+
+.content ul li {
+    list-style: none;
+    /* display: block;
+    height: 198px;
+    width: 219px;
+    float: left;
+    border: 1px solid #aaa;
+    text-align: center;
+    line-height: 218px; */
+}
+
+.content ul li+li {
+    margin-left: -1px;
+}
+.formWrap{
+    width: 995px;
+}
+.slideBox1{
+    width: 900px;
+    position: relative;
+}
+.formWrap h3{
+    line-height: 38px;
+    text-align: left;
+    font-size: 20px;
+    color: #333333;
+    padding-left:15px;
+}
+.formWrap .inpText{
+    display: flex;
+}
+.formWrap .inpText .leftBox{
+    margin-right:36px;
+}
+.formWrap .inpText .inpList{
+    display: flex;
+    margin-bottom: 22px;
+}
+.formWrap .inpText .inpList p{
+    font-size: 12px;
+    color: #666666;
+    line-height: 20px;
+    width: 75px;
+    padding-left:15px;
+    padding-right:20px;
+    text-align: left;
+}
+.formWrap .inpText .inpList input{
+    font-size: 12px;
+    color: #666666;
+    line-height: 40px;
+    width: 270px;
+    border:1px solid #cccccc;
+    border-radius: 4px;
+    padding-left:10px;
+}
+.formWrap .inpText .inpList textarea{
+    font-size: 12px;
+    color: #666666;
+    line-height: 40px;
+    width: 270px;
+    border:1px solid #cccccc;
+    border-radius: 4px;
+    padding-left:10px;
+}
+.fbBox{
+    position: absolute;
+    left: 0;
+    top:0;
+    background-color: #fff;
+}
+.formWrap .tjWrap{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.formWrap .tjWrap .qxBtn{
+    width: 60px;
+    height: 31px;
+    background-color: #169bd5;
+    border-radius:4px;
+    text-align: center;
+    color: #ffffff;
+    line-height: 31px;
+    font-size: 12px;
+    margin-right:20px;
+}
+.formWrap .tjWrap .tjBtn{
+    width: 60px;
+    height: 31px;
+    background-color: #169bd5;
+    border-radius:4px;
+    text-align: center;
+    color: #ffffff;
+    line-height: 31px;
+    font-size: 12px;
+}
+
+.footer{
+    width: 100%;
+    border-top:1px solid #cecece;
+}
+.footer .inner{
+    display: flex;
+    height: 224px;
+}
+.footer .inner .cellBox1{
+    width: 267px;
+    padding-left:25px;
+
+}
+.footer .inner .cellBox1 .imgBox{
+    width: 182px;
+    height: 70px;
+    margin-top: 32px;
+}
+.footer .inner .cellBox1 .imgBox img{
+    width: 182px;
+    height: 70px;
+}
+.footer .inner .cellBox1 .p1{
+    line-height: 26px;
+    font-size: 14px;
+    color: #0690f7;
+    font-weight: bold;
+    margin-top: 21px;
+}
+.footer .inner .cellBox1 .p2{
+    line-height: 17px;
+    font-size: 12px;
+    color: #535353;
+}
+.footer .inner .cellBox2{
+    width: 120px;
+    margin-right:30px;
+}
+.footer .inner .cellBox2 h3{
+    width: 120px;
+    line-height: 30px;
+    font-size: 13px;
+    color: #535353;
+    margin-top: 24px;
+}
+.footer .inner .cellBox2 p{
+    width: 120px;
+    line-height: 28px;
+    font-size: 13px;
+    color: #535353;
+}
+.footer .inner .cellBox7{
+    height: 164px;
+    width: 190px;
+    text-align: center;
+    margin-top: 22px;
+    border-left:1px solid #dbdbdb;
+}
+.footer .inner .cellBox7 p{
+    line-height: 16px;
+    font-size: 12px;
+    color: #535353;
+    margin-top: 6px;
+}
+.footer .inner .cellBox7 .imgBox{
+    height: 105px;
+    width: 105px;
+    margin:0 auto;
+}
+.footer .inner .cellBox7 .imgBox img{
+    height: 105px;
+    width: 105px
+}

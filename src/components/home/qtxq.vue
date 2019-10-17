@@ -20,7 +20,7 @@
             <div class="bread-crumb">
                 <span class="is-link"><a href="/#/HelloWorld" >首页</a><i class="el-icon-arrow-right"></i></span>
                 <span class="is-link"><a   id="typename">商机直通车</a><i class="el-icon-arrow-right"></i></span>
-                <span name="name">产品商机</span>
+                <span name="name">其它商机</span>
                 
             </div>
             <div class="creening-conditions">
@@ -38,8 +38,7 @@
                 <div class="filter-items" style="width:100%;;text-align:left">
                     
                   <el-radio-group v-model="informantType" @change="changeOptions()">
-                    <el-radio-button v-for="item in options" :key="item" :value="item" :label="item"   >
-                      <i class="el-icon-bottom"></i>
+                    <el-radio-button v-for="item in options" :key="item" :value="item" :label="item"  >
                        {{item}}
                     </el-radio-button>
                   </el-radio-group>
@@ -93,21 +92,47 @@
                 
             </div>
             <div class="sort">
-              <row> 
-                <el-checkbox-group v-model="checkboxGroup1">
-                  <el-checkbox-button class="group-checkbox" v-for="city in cities" :label="city" :key="city">{{city}}</el-checkbox-button>
+              <el-row> 
+                 <el-col :span="1"><div>排序：</div></el-col>
+                  <el-col :span="23">
+                     <el-checkbox-group v-model="checkboxGroup1">
+                  <el-checkbox-button class="group-checkbox" v-for="city in cities" :label="city" :key="city">
+                    <i class="el-icon-bottom"></i>
+                       {{city}}</el-checkbox-button>
                 </el-checkbox-group>
-              </row>
+                  </el-col>
+               
+              </el-row>
             </div>
              
             <div class="dataList">
                       <el-table  :data="tableData"  style="width: 100%">
-                        <el-table-column prop="date" label="产品名称" >  </el-table-column>
-                        <el-table-column  prop="name" label="CAS号" > </el-table-column>
-                        <el-table-column  prop="address" label="求购数量">  </el-table-column>
+                        <el-table-column prop="date" label="标题" > 
+                          <template slot-scope="scope">
+                                <div  @click="handleJoinPeople(scope.row)" > {{scope.row.date}} </div>
+                          </template>
+                        </el-table-column>
+                        <el-table-column  prop="name" label="需求类型" > 
+                          <template slot-scope="scope">
+                                <div>需求类型 </div>
+                          </template>
+                        </el-table-column> 
                         <el-table-column  prop="data" label="发布日期">  </el-table-column>
+                        <el-table-column
+                          prop="tag"
+                          label="标签"
+                          width="100"
+                          :filters="[{ text: '钢铁冶金', value: '钢铁冶金' }, { text: '过程仿真', value: '过程仿真' }]"
+                           
+                          filter-placement="bottom-end">
+                          <template slot-scope="scope">
+                            <el-tag
+                              :type="scope.row.tag === '过程仿真' ? 'primary' : 'success'"
+                              disable-transitions>{{scope.row.tag == null ? "过程仿真" :"钢铁冶金"  }} </el-tag>
+                          </template>
+                        </el-table-column>
                       </el-table>
-                      <div style="text-align:right">
+                      <div style="text-align:right;padding-top:20px">
                             <el-pagination
                                     @size-change="handleSizeChange"
                                     @current-change="handleCurrentChange"
@@ -129,7 +154,7 @@
 export default {
   name: 'HelloWorld',
   data () {
-    const cityOptions = ['上海', '北京', '广州', '深圳'];
+    const cityOptions = ['默认', '发布时间', '关注'];
     return {
         radio1: '商机',
         activeName: 'first', 
@@ -142,7 +167,8 @@ export default {
           date: '间氯苯酚',
           name: '108-43-0',
           address: '200公斤',
-          data:"2019-08-19"
+          data:"2019-08-19",
+          tag:"过程仿真"
         }, {
           date: '间氯苯酚',
           name: '108-43-0',
@@ -189,10 +215,7 @@ export default {
           address: '200公斤',
           data:"2019-08-19"
         }],
-        checkboxGroup1: ['上海'],
-        checkboxGroup2: ['上海'],
-        checkboxGroup3: ['上海'],
-        checkboxGroup4: ['上海'],
+        checkboxGroup1: ['默认'], 
         cities: cityOptions
    
     };
@@ -213,6 +236,9 @@ export default {
     },
     handleCurrentChange(val) {
         console.log(`当前页: ${val}`);
+    },
+    handleJoinPeople(data){
+      this.$router.push({name:"qtxuDetail",query:{goodsId:this.goodsId}})
     }
       
   }
@@ -221,6 +247,153 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style>
- 
+div{
+  font-size: 14px;
+}
+
+.dataList{
+  padding: 30px 30px;
+}
+
+.sort{
+    width:100%;
+  min-height:40px; 
+  margin-top:30px;
+  padding: 15px 0 15px 20px;
+  text-align: left;
+  border: 1px solid #efefef; 
+      line-height: 40px;
+}
+
+.search-style  .el-radio-button:first-child .el-radio-button__inner {
+    border: none;
+    border-radius: 0px 0 0 0px;
+}
+
+.search-style  .el-radio-button:last-child .el-radio-button__inner {
+    border-radius: 0 0px 0px 0;
+}
+
+ .search-style  .el-radio-button__inner{
+    border:none;
+    margin: 0px 20px;
+    border:none;
+    background: none
+}
+
+
+ .search-style  .el-radio-button__orig-radio:checked+.el-radio-button__inner { 
+    -webkit-box-shadow: none;
+     
+}
+
+.filter-label{
+    float:left; 
+    min-height: 45px;
+    line-height: 45px;
+    font-weight: 700;
+}
+
+.filter-items{
+    min-height: 45px;
+    line-height: 45px;
+}
+
+.filter-item{
+    padding-left: 40px;
+    list-style:none;
+    float:left; 
+    color: #707070;
+    font-size: 14px;
+}
+
+/**.active{
+  padding:0 15px;
+  background-color: #e3f1ff;
+  color: #0a539a;
+  outline: 1px solid #4dafed;
+  line-height: 30px;
+} */
+
+.filter-item .item-content {
+    cursor: pointer;
+    display: inline-block;
+}
+
+.creening-conditions{
+  width:100%;
+  min-height:100px;
+  background-color: #868E96;
+  margin-top:30px;
+  padding: 15px 0 15px 30px;
+  text-align: center;
+  border: 1px solid #efefef;
+  background-color: #fafafa;
+}
+
+.search-style  .el-select .el-input {
+    width: 130px;
+  }
+ .search-style  .input-with-select .el-input-group__prepend {
+    background-color: #ffffff;
+  }
+
+.search{
+      width: 80%;
+      padding: 15px 0 15px 30px;
+      text-align: center;
+      border: 1px solid #efefef;
+      background-color: #fafafa;
+      height:400px;
+      margin: 0 auto;
+}
+
+.h1 {
+     margin-top: 0;
+    margin-bottom: 40px;
+    font-size: 33px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #eee
+}
+
+.search-style  .el-input-group__append, .el-input-group__prepend {
+    background-color: #0690f7;
+}
+
+.search-style  .el-input-group__append, .el-input-group__prepend button{
+    color: #f5f7fa;
+     border: 1px solid #0690f7;
+}
+
+.container-info{
+  width:1200px;
+   
+  min-height:400px;
+  margin:30px auto 0px;
+}
+
+.bread-crumb{
+  color: #868E96;
+      font-size: 14px;
+    line-height: 20px;
+}
+
+.group-checkbox{
+    padding: 0px 10px;
+}
+.group-checkbox>span{
+  border: 1px solid #efefef; 
+  border-radius: 4px 0 0 4px;
+}
+
+.el-checkbox-button:last-child .el-checkbox-button__inner {
+    border-radius: 0 0px 0px 0; 
+}
+
+
+.el-checkbox-button:first-child .el-checkbox-button__inner {
+    border-radius: 0 0px 0px 0; 
+}
  
 </style>

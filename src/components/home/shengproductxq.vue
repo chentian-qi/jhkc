@@ -19,14 +19,14 @@
         <div class="container-info">
             <div class="bread-crumb">
                 <span class="is-link"><a href="/#/HelloWorld" >首页</a><i class="el-icon-arrow-right"></i></span>
-                <span class="is-link"><a   id="typename">商机直通车</a><i class="el-icon-arrow-right"></i></span>
-                <span name="name">产品商机</span>
+                <span class="is-link"><a   id="typename">资源直通车</a><i class="el-icon-arrow-right"></i></span>
+                <span name="name">生产资源</span>
                 
             </div>
             <div class="creening-conditions">
                <el-row>
                   <div class="filter-label">
-                    所属领域1
+                    合作方式
                   </div>
                 <!-- <ul class="filter-items">
                      <li v-for='item of areaList' :key="item" class="filter-item" >
@@ -48,7 +48,7 @@
 
                 <el-row>
                   <div class="filter-label">
-                    所属领域2
+                    合作标签 
                   </div>
                 <!-- <ul class="filter-items">
                      <li v-for='item of areaList' :key="item" class="filter-item" >
@@ -70,7 +70,7 @@
 
                 <el-row>
                   <div class="filter-label">
-                    所属领域3
+                    是否自有厂房
                   </div>
                 <!-- <ul class="filter-items">
                      <li v-for='item of areaList' :key="item" class="filter-item" >
@@ -107,13 +107,48 @@
              
             <div class="dataList">
                       <el-table  :data="tableData"  style="width: 100%">
-                        <el-table-column prop="date" label="产品名称" > 
+                        <el-table-column prop="date" label="生产资源编号" > 
                           <template slot-scope="scope">
-                                <div  @click="handleJoinPeople(scope.row)" > {{scope.row.date}} </div>
+                                <div  @click="handleJoinPeople(scope.row)" >201909545 </div>
                           </template>
                         </el-table-column>
-                        <el-table-column  prop="name" label="CAS号" > </el-table-column>
-                        <el-table-column  prop="address" label="求购数量">  </el-table-column>
+                        <el-table-column  prop="name" label="合作方式" >
+                            <template slot-scope="scope">
+                                <div  >合作方式 </div>
+                          </template>
+                         </el-table-column>
+
+                         <el-table-column  prop="name" label="合作标签" >
+                            <template slot-scope="scope">
+                                <div  >合作标签 </div>
+                          </template>
+                         </el-table-column>
+
+                        <el-table-column  prop="name" label="是否自有厂房" >
+                            <template slot-scope="scope">
+                                <div  >有 </div>
+                          </template>
+                         </el-table-column>
+
+                        <el-table-column  prop="name" label="  擅长技术/工艺类型" >
+                            <template slot-scope="scope">
+                                <div>   擅长技术/工艺类型 </div>
+                          </template>
+                         </el-table-column>
+
+                        <el-table-column  prop="name" label="    擅长产品/结构类型" >
+                            <template slot-scope="scope">
+                                <div>     擅长产品/结构类型 </div>
+                          </template>
+                         </el-table-column>
+                    
+
+                        <el-table-column  prop="name" label=" 特殊或优势原料" >
+                            <template slot-scope="scope">
+                                <div>   特殊或优势原料 </div>
+                          </template>
+                         </el-table-column>
+                         
                         <el-table-column  prop="data" label="发布日期">  </el-table-column>
                         <el-table-column
                           prop="tag"
@@ -176,41 +211,6 @@ export default {
           name: '108-43-0',
           address: '200公斤',
           data:"2019-08-19"
-        }, {
-          date: '间氯苯酚',
-          name: '108-43-0',
-          address: '200公斤',
-          data:"2019-08-19"
-        }, {
-          date: '间氯苯酚',
-          name: '108-43-0',
-          address: '200公斤',
-          data:"2019-08-19"
-        }, {
-          date: '间氯苯酚',
-          name: '108-43-0',
-          address: '200公斤',
-          data:"2019-08-19"
-        }, {
-          date: '间氯苯酚',
-          name: '108-43-0',
-          address: '200公斤',
-          data:"2019-08-19"
-        }, {
-          date: '间氯苯酚',
-          name: '108-43-0',
-          address: '200公斤',
-          data:"2019-08-19"
-        }, {
-          date: '间氯苯酚',
-          name: '108-43-0',
-          address: '200公斤',
-          data:"2019-08-19"
-        }, {
-          date: '间氯苯酚',
-          name: '108-43-0',
-          address: '200公斤',
-          data:"2019-08-19"
         }],
         checkboxGroup1: ['默认'], 
         cities: cityOptions
@@ -221,8 +221,8 @@ export default {
   }, methods: {
     
     init(){
-        $("#leftBox2").parent().find("a").css("background-color","#0690f7");
-        $("#leftBox2").css("background-color","#1976c5");
+        $("#leftBox3").parent().find("a").css("background-color","#0690f7");
+        $("#leftBox3").css("background-color","#1976c5");
     },
 
     changeOptions(){
@@ -235,7 +235,7 @@ export default {
         console.log(`当前页: ${val}`);
     },
     handleJoinPeople(data){
-      this.$router.push({name:"productxqDetail",query:{goodsId:this.goodsId}})
+      this.$router.push({name:"shengproductxqDetail",query:{goodsId:this.goodsId}})
     }
       
   }
@@ -289,6 +289,7 @@ div{
     min-height: 45px;
     line-height: 45px;
     font-weight: 700;
+    width:100px
 }
 
 .filter-items{

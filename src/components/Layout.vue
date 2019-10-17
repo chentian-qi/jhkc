@@ -23,6 +23,7 @@
                     <div class="cellBox5">
                         <img src="/static/images/index03.jpg" alt="">
                     </div>
+                    <div class="cellBox4">发布</div>
                 </div>
             </div>
         </div>
@@ -43,22 +44,23 @@
                         <p class="p2">工作日：8:30-17:30</p>
                     </div>
                     <div class="cellBox2">
-                        <h3>需求展示</h3>
-                        <p>产品需求</p>
+                        <h3>商机展示</h3>
+                        <p>产品商机</p>
                         <p>技术供需</p>
-                        <p>项目需求</p>
-                        <p>市场开拓</p>
-                        <p>投资并购</p>
+                        <p>项目商机</p>
+                        <p>投融资商机</p>
+                        <p>其它商机</p>
                     </div>
                     <div class="cellBox2">
                         <h3>资源搜索</h3>
                         <p>生产资源</p>
                         <p>技术资源</p>
-                        <p>客户资源</p>
+                        <p>市场资源</p>
+                        <p>更多资源</p>
                     </div>
                     <div class="cellBox2">
-                        <h3>优品直通车</h3>
-                        <p>优品直通车</p>
+                        <h3>精化优选</h3>
+                        <p>精化优选</p>
                     </div>
                     <div class="cellBox2">
                         <h3>快车服务</h3>

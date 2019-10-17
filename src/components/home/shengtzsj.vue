@@ -8,8 +8,7 @@
               <div style="margin:15px auto;width:40%" class="">
                 <el-input placeholder="请输入内容" v-model="input3" class="input-with-select">
                   <el-select v-model="select" slot="prepend" placeholder="请选择">
-                    <el-option label="产品名称" value="1"></el-option>
-                    <el-option label="CAS号" value="2"></el-option>
+                    <el-option label="核心能力" value="1"></el-option> 
                   </el-select>
                   <el-button slot="append" icon="el-icon-search"></el-button>
                 </el-input>
@@ -19,79 +18,16 @@
         <div class="container-info">
             <div class="bread-crumb">
                 <span class="is-link"><a href="/#/HelloWorld" >首页</a><i class="el-icon-arrow-right"></i></span>
-                <span class="is-link"><a   id="typename">商机直通车</a><i class="el-icon-arrow-right"></i></span>
-                <span name="name">产品商机</span>
+                <span class="is-link"><a   id="typename">资源直通车</a><i class="el-icon-arrow-right"></i></span>
+                <span name="name">更多资源</span>
                 
             </div>
-            <div class="creening-conditions">
-               <el-row>
-                  <div class="filter-label">
-                    所属领域1
-                  </div>
-                <!-- <ul class="filter-items">
-                     <li v-for='item of areaList' :key="item" class="filter-item" >
-                        <div class="item-content">
-                           <span class="no-limit"> {{item}}</span>
-                        </div>
-                    </li>
-                </ul> -->
-                <div class="filter-items" style="width:100%;;text-align:left">
-                    
-                  <el-radio-group v-model="informantType" @change="changeOptions()">
-                    <el-radio-button v-for="item in options" :key="item" :value="item" :label="item"  >
-                       {{item}}
-                    </el-radio-button>
-                  </el-radio-group>
-                </div>
-                
-               </el-row>
 
-                <el-row>
-                  <div class="filter-label">
-                    所属领域2
-                  </div>
-                <!-- <ul class="filter-items">
-                     <li v-for='item of areaList' :key="item" class="filter-item" >
-                        <div class="item-content">
-                           <span class="no-limit"> {{item}}</span>
-                        </div>
-                    </li>
-                </ul> -->
-                <div class="filter-items" style="width:100%;;text-align:left">
-                    
-                  <el-radio-group v-model="informantType" @change="changeOptions()">
-                    <el-radio-button v-for="item in options" :key="item" :value="item" :label="item"  >
-                       {{item}}
-                    </el-radio-button>
-                  </el-radio-group>
-                </div>
-                
-               </el-row>
+              
 
-                <el-row>
-                  <div class="filter-label">
-                    所属领域3
-                  </div>
-                <!-- <ul class="filter-items">
-                     <li v-for='item of areaList' :key="item" class="filter-item" >
-                        <div class="item-content">
-                           <span class="no-limit"> {{item}}</span>
-                        </div>
-                    </li>
-                </ul> -->
-                <div class="filter-items" style="width:100%;;text-align:left">
-                    
-                  <el-radio-group v-model="informantType" @change="changeOptions()">
-                    <el-radio-button v-for="item in options" :key="item" :value="item" :label="item"  >
-                       {{item}}
-                    </el-radio-button>
-                  </el-radio-group>
-                </div>
-                
-               </el-row>
-                
-            </div>
-            <div class="sort">
+              
+
+             <div class="sort">
               <el-row> 
                  <el-col :span="1"><div>排序：</div></el-col>
                   <el-col :span="23">
@@ -104,16 +40,22 @@
                
               </el-row>
             </div>
-             
+         
             <div class="dataList">
                       <el-table  :data="tableData"  style="width: 100%">
-                        <el-table-column prop="date" label="产品名称" > 
+                        <el-table-column prop="date" label="资源编号" > 
                           <template slot-scope="scope">
-                                <div  @click="handleJoinPeople(scope.row)" > {{scope.row.date}} </div>
+                                <div  @click="handleJoinPeople(scope.row)" >259855255 </div>
                           </template>
                         </el-table-column>
-                        <el-table-column  prop="name" label="CAS号" > </el-table-column>
-                        <el-table-column  prop="address" label="求购数量">  </el-table-column>
+                          <el-table-column prop="date" label="核心服务能力" > 
+                          <template slot-scope="scope">
+                                <div  @click="handleJoinPeople(scope.row)" > 核心服务能力</div>
+                          </template>
+                        </el-table-column>
+                               
+                       
+
                         <el-table-column  prop="data" label="发布日期">  </el-table-column>
                         <el-table-column
                           prop="tag"
@@ -161,53 +103,13 @@ export default {
         options:["不限","能源电力","环境工程","化学化工","机械电子"],
         informantType:"不限",
         tableData: [{
-          date: '间氯苯酚',
+          date: 'CDMO定制生产溴化项目二',
           name: '108-43-0',
           address: '200公斤',
           data:"2019-08-19",
           tag:"过程仿真"
         }, {
-          date: '间氯苯酚',
-          name: '108-43-0',
-          address: '200公斤',
-          data:"2019-08-19"
-        }, {
-          date: '间氯苯酚',
-          name: '108-43-0',
-          address: '200公斤',
-          data:"2019-08-19"
-        }, {
-          date: '间氯苯酚',
-          name: '108-43-0',
-          address: '200公斤',
-          data:"2019-08-19"
-        }, {
-          date: '间氯苯酚',
-          name: '108-43-0',
-          address: '200公斤',
-          data:"2019-08-19"
-        }, {
-          date: '间氯苯酚',
-          name: '108-43-0',
-          address: '200公斤',
-          data:"2019-08-19"
-        }, {
-          date: '间氯苯酚',
-          name: '108-43-0',
-          address: '200公斤',
-          data:"2019-08-19"
-        }, {
-          date: '间氯苯酚',
-          name: '108-43-0',
-          address: '200公斤',
-          data:"2019-08-19"
-        }, {
-          date: '间氯苯酚',
-          name: '108-43-0',
-          address: '200公斤',
-          data:"2019-08-19"
-        }, {
-          date: '间氯苯酚',
+          date: 'CDMO定制生产溴化项目二',
           name: '108-43-0',
           address: '200公斤',
           data:"2019-08-19"
@@ -221,8 +123,8 @@ export default {
   }, methods: {
     
     init(){
-        $("#leftBox2").parent().find("a").css("background-color","#0690f7");
-        $("#leftBox2").css("background-color","#1976c5");
+        $("#leftBox3").parent().find("a").css("background-color","#0690f7");
+        $("#leftBox3").css("background-color","#1976c5");
     },
 
     changeOptions(){
@@ -235,7 +137,7 @@ export default {
         console.log(`当前页: ${val}`);
     },
     handleJoinPeople(data){
-      this.$router.push({name:"productxqDetail",query:{goodsId:this.goodsId}})
+      this.$router.push({name:"shengqtxuDetail",query:{goodsId:this.goodsId}})
     }
       
   }

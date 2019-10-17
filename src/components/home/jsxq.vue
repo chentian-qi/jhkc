@@ -8,8 +8,7 @@
               <div style="margin:15px auto;width:40%" class="">
                 <el-input placeholder="请输入内容" v-model="input3" class="input-with-select">
                   <el-select v-model="select" slot="prepend" placeholder="请选择">
-                    <el-option label="产品名称" value="1"></el-option>
-                    <el-option label="CAS号" value="2"></el-option>
+                    <el-option label="关键字" value="1"></el-option> 
                   </el-select>
                   <el-button slot="append" icon="el-icon-search"></el-button>
                 </el-input>
@@ -20,10 +19,25 @@
             <div class="bread-crumb">
                 <span class="is-link"><a href="/#/HelloWorld" >首页</a><i class="el-icon-arrow-right"></i></span>
                 <span class="is-link"><a   id="typename">商机直通车</a><i class="el-icon-arrow-right"></i></span>
-                <span name="name">产品商机</span>
+                <span name="name">技术商机</span>
                 
             </div>
             <div class="creening-conditions">
+               <el-row>
+                  <div class="filter-label">
+                    类型
+                  </div>
+                
+                <div class="filter-items" style="width:100%;;text-align:left">
+                    
+                  <el-radio-group v-model="informantType" @change="changeOptions()">
+                    <el-radio-button v-for="item in typeoptions" :key="item" :value="item" :label="item"  >
+                       {{item}}
+                    </el-radio-button>
+                  </el-radio-group>
+                </div>
+                
+               </el-row>
                <el-row>
                   <div class="filter-label">
                     所属领域1
@@ -89,6 +103,92 @@
                 </div>
                 
                </el-row>
+
+               
+                <el-row>
+                  <div class="filter-label">
+                    技术成熟度
+                  </div>
+                <!-- <ul class="filter-items">
+                     <li v-for='item of areaList' :key="item" class="filter-item" >
+                        <div class="item-content">
+                           <span class="no-limit"> {{item}}</span>
+                        </div>
+                    </li>
+                </ul> -->
+                <div class="filter-items" style="width:100%;;text-align:left">
+                    
+                  <el-radio-group v-model="informantType" @change="changeOptions()">
+                    <el-radio-button v-for="item in options1" :key="item" :value="item" :label="item"  >
+                       {{item}}
+                    </el-radio-button>
+                  </el-radio-group>
+                </div>
+                
+               </el-row>
+                 <el-row>
+                  <div class="filter-label">
+                    技术类型
+                  </div>
+                <!-- <ul class="filter-items">
+                     <li v-for='item of areaList' :key="item" class="filter-item" >
+                        <div class="item-content">
+                           <span class="no-limit"> {{item}}</span>
+                        </div>
+                    </li>
+                </ul> -->
+                <div class="filter-items" style="width:100%;;text-align:left">
+                    
+                  <el-radio-group v-model="informantType" @change="changeOptions()">
+                    <el-radio-button v-for="item in options2" :key="item" :value="item" :label="item"  >
+                       {{item}}
+                    </el-radio-button>
+                  </el-radio-group>
+                </div>
+                
+               </el-row>
+               <el-row>
+                  <div class="filter-label">
+                    合作标签
+                  </div>
+                <!-- <ul class="filter-items">
+                     <li v-for='item of areaList' :key="item" class="filter-item" >
+                        <div class="item-content">
+                           <span class="no-limit"> {{item}}</span>
+                        </div>
+                    </li>
+                </ul> -->
+                <div class="filter-items" style="width:100%;;text-align:left">
+                    
+                  <el-radio-group v-model="informantType" @change="changeOptions()">
+                    <el-radio-button v-for="item in options3" :key="item" :value="item" :label="item"  >
+                       {{item}}
+                    </el-radio-button>
+                  </el-radio-group>
+                </div>
+                
+               </el-row>
+                  <el-row>
+                  <div class="filter-label">
+                    合作方式
+                  </div>
+                <!-- <ul class="filter-items">
+                     <li v-for='item of areaList' :key="item" class="filter-item" >
+                        <div class="item-content">
+                           <span class="no-limit"> {{item}}</span>
+                        </div>
+                    </li>
+                </ul> -->
+                <div class="filter-items" style="width:100%;;text-align:left">
+                    
+                  <el-radio-group v-model="informantType" @change="changeOptions()">
+                    <el-radio-button v-for="item in options4" :key="item" :value="item" :label="item"  >
+                       {{item}}
+                    </el-radio-button>
+                  </el-radio-group>
+                </div>
+                
+               </el-row>
                 
             </div>
             <div class="sort">
@@ -107,13 +207,41 @@
              
             <div class="dataList">
                       <el-table  :data="tableData"  style="width: 100%">
-                        <el-table-column prop="date" label="产品名称" > 
+                        <el-table-column prop="date" label="标题" > 
                           <template slot-scope="scope">
                                 <div  @click="handleJoinPeople(scope.row)" > {{scope.row.date}} </div>
                           </template>
                         </el-table-column>
-                        <el-table-column  prop="name" label="CAS号" > </el-table-column>
-                        <el-table-column  prop="address" label="求购数量">  </el-table-column>
+                        <el-table-column  prop="name" label="技术类型" > 
+                            <template slot-scope="scope">
+                                <div> 专利 </div>
+                          </template>
+                        </el-table-column>
+                        <el-table-column  prop="address" label="技术成熟度"> 
+                           <template slot-scope="scope">
+                                <div> 生试阶段 </div>
+                          </template> </el-table-column>
+                        <el-table-column  prop="address" label="价格"> 
+                         <template slot-scope="scope">
+                                <div> 面议 </div>
+                          </template> 
+                         </el-table-column>
+                        <el-table-column  prop="address" label="合作标签"> 
+                        <template slot-scope="scope">
+                                <div> 股权融资合作 </div>
+                          </template> 
+                         </el-table-column>
+                       <el-table-column  prop="address" label="类型"> 
+                        <template slot-scope="scope">
+                                <div> 供 </div>
+                          </template> 
+                         </el-table-column>
+                        <el-table-column  prop="address" label="合作方式"> 
+                        <template slot-scope="scope">
+                                <div>技术入股 </div>
+                          </template> 
+                         </el-table-column>
+                         
                         <el-table-column  prop="data" label="发布日期">  </el-table-column>
                         <el-table-column
                           prop="tag"
@@ -159,55 +287,20 @@ export default {
         select: '1',
         currentPage4:1,
         options:["不限","能源电力","环境工程","化学化工","机械电子"],
+        typeoptions:["不限","供","需"],
+        options1:["不限","小试","中试","产业化"],
+        options2:["不限","专利","非专利"],
+        options3:["不限","股权融资合作","市场渠道合作","落地孵化合作"],
+        options4:["不限","技术入股", "技术转让", "技术许可", "委托开发", "其他"],
         informantType:"不限",
         tableData: [{
-          date: '间氯苯酚',
+          date: '供1-氯甲基萘大生产技术',
           name: '108-43-0',
           address: '200公斤',
           data:"2019-08-19",
           tag:"过程仿真"
         }, {
-          date: '间氯苯酚',
-          name: '108-43-0',
-          address: '200公斤',
-          data:"2019-08-19"
-        }, {
-          date: '间氯苯酚',
-          name: '108-43-0',
-          address: '200公斤',
-          data:"2019-08-19"
-        }, {
-          date: '间氯苯酚',
-          name: '108-43-0',
-          address: '200公斤',
-          data:"2019-08-19"
-        }, {
-          date: '间氯苯酚',
-          name: '108-43-0',
-          address: '200公斤',
-          data:"2019-08-19"
-        }, {
-          date: '间氯苯酚',
-          name: '108-43-0',
-          address: '200公斤',
-          data:"2019-08-19"
-        }, {
-          date: '间氯苯酚',
-          name: '108-43-0',
-          address: '200公斤',
-          data:"2019-08-19"
-        }, {
-          date: '间氯苯酚',
-          name: '108-43-0',
-          address: '200公斤',
-          data:"2019-08-19"
-        }, {
-          date: '间氯苯酚',
-          name: '108-43-0',
-          address: '200公斤',
-          data:"2019-08-19"
-        }, {
-          date: '间氯苯酚',
+          date: '供1-氯甲基萘大生产技术',
           name: '108-43-0',
           address: '200公斤',
           data:"2019-08-19"
@@ -235,7 +328,7 @@ export default {
         console.log(`当前页: ${val}`);
     },
     handleJoinPeople(data){
-      this.$router.push({name:"productxqDetail",query:{goodsId:this.goodsId}})
+      this.$router.push({name:"jsxqDetail",query:{goodsId:this.goodsId}})
     }
       
   }
@@ -289,6 +382,8 @@ div{
     min-height: 45px;
     line-height: 45px;
     font-weight: 700;
+    min-width: 100px;
+    text-align: right
 }
 
 .filter-items{

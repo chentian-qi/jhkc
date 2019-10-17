@@ -38,7 +38,7 @@
                                       </div>
                                 </el-col>
                                 <el-col :span="8">
-                                       <div style="background-image:url('/static/images/index_jhxw05.jpg');height:300px;background-size: 100% 100%;">
+                                       <div style="background-image:url('/static/images/index_jhxw05.jpg');height:300px;background-size: 100% 100%;"  @click="goPage(3)">
                                           
                                           <div class="box4">技术商机</div>
                                       </div>
@@ -46,13 +46,13 @@
                               </el-row>
                               <el-row  :gutter="5">
                                 <el-col :span="8">
-                                     <div style="background-image:url('/static/images/jjjh02.jpg');height:300px;background-size: 100% 100%;">
+                                     <div style="background-image:url('/static/images/jjjh02.jpg');height:300px;background-size: 100% 100%;" @click="goPage(4)">
                                           
                                           <div class="box4">投、融资商机</div>
                                       </div>
                                 </el-col>
                                 <el-col :span="8">
-                                      <div style="background-image:url('/static/images/index_ban01.jpg');height:300px;background-size: 100% 100%;">
+                                      <div style="background-image:url('/static/images/index_ban01.jpg');height:300px;background-size: 100% 100%;" @click="goPage(5)">
                                           
                                           <div class="box4">其它商机</div>
                                       </div>
@@ -64,19 +64,19 @@
                         <div style="width:100%;height:300px"  class="shou">
                              <el-row :gutter="5"> 
                                 <el-col :span="8">
-                                     <div style="background-image:url('/static/images/index_jhxw03.jpg');height:300px;background-size: 100% 100%;">
+                                     <div style="background-image:url('/static/images/index_jhxw03.jpg');height:300px;background-size: 100% 100%;" @click="goPage(6)">
                                           
                                           <div class="box4">生产资源</div>
                                       </div>
                                 </el-col>
                                 <el-col :span="8">
-                                      <div style="background-image:url('/static/images/jhtj03.jpg');height:300px;background-size: 100% 100%;">
+                                      <div style="background-image:url('/static/images/jhtj03.jpg');height:300px;background-size: 100% 100%;" @click="goPage(7)">
                                           
                                           <div class="box4">技术资源</div>
                                       </div>
                                 </el-col>
                                 <el-col :span="8">
-                                       <div style="background-image:url('/static/images/index_jhxw04.jpg');height:300px;background-size: 100% 100%;">
+                                       <div style="background-image:url('/static/images/index_jhxw04.jpg');height:300px;background-size: 100% 100%;" @click="goPage(8)">
                                           
                                           <div class="box4">市场资源</div>
                                       </div>
@@ -85,7 +85,7 @@
                               <el-row  :gutter="5">
                             
                                 <el-col :span="8">
-                                      <div style="background-image:url('/static/images/index_ban01.jpg');height:300px;background-size: 100% 100%;">
+                                      <div style="background-image:url('/static/images/index_ban01.jpg');height:300px;background-size: 100% 100%;" @click="goPage(9)">
                                           <div class="box4">其它资源</div>
                                       </div>
                                  </el-col>
@@ -288,6 +288,46 @@ export default {
       if(num == 2){
           this.$router.push({name:"productxq",query:{goodsId:this.goodsId}})
       }
+
+        
+      if(num == 1){
+          this.$router.push({name:"xmxq",query:{goodsId:this.goodsId}})
+      }
+
+
+      if(num == 3){
+          this.$router.push({name:"jsxq",query:{goodsId:this.goodsId}})
+      }
+      
+
+      
+      if(num == 4){
+          this.$router.push({name:"trz",query:{goodsId:this.goodsId}})
+      }
+
+      if(num == 5){
+          this.$router.push({name:"qtxq",query:{goodsId:this.goodsId}})
+      }
+
+
+     if(num == 6){
+       console.log("shengproductxq")
+          this.$router.push({name:"shengproductxq",query:{goodsId:this.goodsId}})
+      }
+
+     if(num == 7){
+          this.$router.push({name:"shengxmxq",query:{goodsId:this.goodsId}})
+      }
+
+     if(num == 8){
+          this.$router.push({name:"shengjsxq",query:{goodsId:this.goodsId}})
+      }
+
+     if(num == 9){
+          this.$router.push({name:"shengtzsj",query:{goodsId:this.goodsId}})
+      }
+
+
       
     }
 
@@ -313,11 +353,11 @@ a {
   color: #42b983;
 }
 
-/deep/ .el-radio-button:first-child .el-radio-button__inner {
+ .el-radio-button:first-child .el-radio-button__inner {
     border-radius: 0 0 0 0;
 }
 
-/deep/ .el-radio-button:last-child .el-radio-button__inner {
+ .el-radio-button:last-child .el-radio-button__inner {
     border-radius: 0 0px 0px 0;
 }
  

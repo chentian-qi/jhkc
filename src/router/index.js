@@ -27,13 +27,18 @@ import shengjsxqDetail  from '@/components/home/shengjsxqDetail.vue'
 import shengjsxq  from '@/components/home/shengjsxq.vue' 
 import shengtzsj  from '@/components/home/shengtzsj.vue' 
 import shengqtxuDetail  from '@/components/home/shengqtxqDetail.vue'
-
+import user  from '@/components/home/user.vue'
 
 
 Vue.use(Router)
 
 export default new Router({
   routes: [
+    {
+      path: '/user',
+      name: 'user',
+      component: user
+    },
     {
       path: '/shengtzsj',
       name: 'shengtzsj',
